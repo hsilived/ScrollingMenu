@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		633CE72F18F4F4D200A6AB3F /* bg_0001.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72618F4F4D200A6AB3F /* bg_0001.png */; };
+		633CE73018F4F4D200A6AB3F /* bg_0002.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72718F4F4D200A6AB3F /* bg_0002.png */; };
+		633CE73118F4F4D200A6AB3F /* bg_0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72818F4F4D200A6AB3F /* bg_0003.png */; };
+		633CE73218F4F4D200A6AB3F /* bg_0004.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72918F4F4D200A6AB3F /* bg_0004.png */; };
+		633CE73318F4F4D200A6AB3F /* bg_0005.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72A18F4F4D200A6AB3F /* bg_0005.png */; };
+		633CE73418F4F4D200A6AB3F /* mg_0001.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72B18F4F4D200A6AB3F /* mg_0001.png */; };
+		633CE73518F4F4D200A6AB3F /* mg_0002.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72C18F4F4D200A6AB3F /* mg_0002.png */; };
+		633CE73618F4F4D200A6AB3F /* mg_0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72D18F4F4D200A6AB3F /* mg_0003.png */; };
+		633CE73718F4F4D200A6AB3F /* mg_0004.png in Resources */ = {isa = PBXBuildFile; fileRef = 633CE72E18F4F4D200A6AB3F /* mg_0004.png */; };
 		636FBB2718F4717200E94CF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FBB2618F4717200E94CF4 /* Foundation.framework */; };
 		636FBB2918F4717200E94CF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FBB2818F4717200E94CF4 /* CoreGraphics.framework */; };
 		636FBB2B18F4717200E94CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FBB2A18F4717200E94CF4 /* UIKit.framework */; };
@@ -17,14 +26,26 @@
 		636FBB3C18F4717200E94CF4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB3A18F4717200E94CF4 /* Main_iPhone.storyboard */; };
 		636FBB3F18F4717200E94CF4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB3D18F4717200E94CF4 /* Main_iPad.storyboard */; };
 		636FBB4218F4717200E94CF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB4118F4717200E94CF4 /* ViewController.m */; };
-		636FBB4518F4717200E94CF4 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB4418F4717200E94CF4 /* MyScene.m */; };
-		636FBB4718F4717200E94CF4 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB4618F4717200E94CF4 /* Spaceship.png */; };
+		636FBB4518F4717200E94CF4 /* LevelsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB4418F4717200E94CF4 /* LevelsScene.m */; };
 		636FBB4918F4717200E94CF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB4818F4717200E94CF4 /* Images.xcassets */; };
 		636FBB5018F4717200E94CF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FBB4F18F4717200E94CF4 /* XCTest.framework */; };
 		636FBB5118F4717200E94CF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FBB2618F4717200E94CF4 /* Foundation.framework */; };
 		636FBB5218F4717200E94CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636FBB2A18F4717200E94CF4 /* UIKit.framework */; };
 		636FBB5A18F4717200E94CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB5818F4717200E94CF4 /* InfoPlist.strings */; };
 		636FBB5C18F4717200E94CF4 /* ScrollingMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB5B18F4717200E94CF4 /* ScrollingMenuTests.m */; };
+		636FBB6718F47B0F00E94CF4 /* LevelsScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6618F47B0F00E94CF4 /* LevelsScroller.m */; };
+		636FBB7718F4844300E94CF4 /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6A18F4844300E94CF4 /* SKAction+SKTExtras.m */; };
+		636FBB7818F4844300E94CF4 /* SKEmitterNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6C18F4844300E94CF4 /* SKEmitterNode+SKTExtras.m */; };
+		636FBB7918F4844300E94CF4 /* SKNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6E18F4844300E94CF4 /* SKNode+SKTExtras.m */; };
+		636FBB7A18F4844300E94CF4 /* SKTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7018F4844300E94CF4 /* SKTAudio.m */; };
+		636FBB7B18F4844300E94CF4 /* SKTEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7218F4844300E94CF4 /* SKTEffects.m */; };
+		636FBB7C18F4844300E94CF4 /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */; };
+		636FBB7D18F4844300E94CF4 /* SKTUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7618F4844300E94CF4 /* SKTUtils.mm */; };
+		636FBB7F18F4C04E00E94CF4 /* bg_menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB7E18F4C04E00E94CF4 /* bg_menu2.png */; };
+		636FBB8318F4C20F00E94CF4 /* pBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB8018F4C20F00E94CF4 /* pBackground.png */; };
+		636FBB8418F4C20F00E94CF4 /* pForeground.png in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB8118F4C20F00E94CF4 /* pForeground.png */; };
+		636FBB8518F4C20F00E94CF4 /* pMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB8218F4C20F00E94CF4 /* pMiddle.png */; };
+		636FBB8818F4C58D00E94CF4 /* PBParallaxScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB8718F4C58D00E94CF4 /* PBParallaxScrolling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +59,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		633CE72618F4F4D200A6AB3F /* bg_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_0001.png; sourceTree = "<group>"; };
+		633CE72718F4F4D200A6AB3F /* bg_0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_0002.png; sourceTree = "<group>"; };
+		633CE72818F4F4D200A6AB3F /* bg_0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_0003.png; sourceTree = "<group>"; };
+		633CE72918F4F4D200A6AB3F /* bg_0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_0004.png; sourceTree = "<group>"; };
+		633CE72A18F4F4D200A6AB3F /* bg_0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_0005.png; sourceTree = "<group>"; };
+		633CE72B18F4F4D200A6AB3F /* mg_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg_0001.png; sourceTree = "<group>"; };
+		633CE72C18F4F4D200A6AB3F /* mg_0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg_0002.png; sourceTree = "<group>"; };
+		633CE72D18F4F4D200A6AB3F /* mg_0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg_0003.png; sourceTree = "<group>"; };
+		633CE72E18F4F4D200A6AB3F /* mg_0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg_0004.png; sourceTree = "<group>"; };
 		636FBB2318F4717200E94CF4 /* ScrollingMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollingMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		636FBB2618F4717200E94CF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		636FBB2818F4717200E94CF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,15 +83,36 @@
 		636FBB3E18F4717200E94CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		636FBB4018F4717200E94CF4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		636FBB4118F4717200E94CF4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		636FBB4318F4717200E94CF4 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		636FBB4418F4717200E94CF4 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		636FBB4618F4717200E94CF4 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		636FBB4318F4717200E94CF4 /* LevelsScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelsScene.h; sourceTree = "<group>"; };
+		636FBB4418F4717200E94CF4 /* LevelsScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelsScene.m; sourceTree = "<group>"; };
 		636FBB4818F4717200E94CF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		636FBB4E18F4717200E94CF4 /* ScrollingMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScrollingMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		636FBB4F18F4717200E94CF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		636FBB5718F4717200E94CF4 /* ScrollingMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ScrollingMenuTests-Info.plist"; sourceTree = "<group>"; };
 		636FBB5918F4717200E94CF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		636FBB5B18F4717200E94CF4 /* ScrollingMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollingMenuTests.m; sourceTree = "<group>"; };
+		636FBB6518F47B0F00E94CF4 /* LevelsScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsScroller.h; sourceTree = "<group>"; };
+		636FBB6618F47B0F00E94CF4 /* LevelsScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelsScroller.m; sourceTree = "<group>"; };
+		636FBB6918F4844300E94CF4 /* SKAction+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTExtras.h"; sourceTree = "<group>"; };
+		636FBB6A18F4844300E94CF4 /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTExtras.m"; sourceTree = "<group>"; };
+		636FBB6B18F4844300E94CF4 /* SKEmitterNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+SKTExtras.h"; sourceTree = "<group>"; };
+		636FBB6C18F4844300E94CF4 /* SKEmitterNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+SKTExtras.m"; sourceTree = "<group>"; };
+		636FBB6D18F4844300E94CF4 /* SKNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+SKTExtras.h"; sourceTree = "<group>"; };
+		636FBB6E18F4844300E94CF4 /* SKNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+SKTExtras.m"; sourceTree = "<group>"; };
+		636FBB6F18F4844300E94CF4 /* SKTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTAudio.h; sourceTree = "<group>"; };
+		636FBB7018F4844300E94CF4 /* SKTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTAudio.m; sourceTree = "<group>"; };
+		636FBB7118F4844300E94CF4 /* SKTEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTEffects.h; sourceTree = "<group>"; };
+		636FBB7218F4844300E94CF4 /* SKTEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTEffects.m; sourceTree = "<group>"; };
+		636FBB7318F4844300E94CF4 /* SKTTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTTimingFunctions.h; sourceTree = "<group>"; };
+		636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTTimingFunctions.m; sourceTree = "<group>"; };
+		636FBB7518F4844300E94CF4 /* SKTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
+		636FBB7618F4844300E94CF4 /* SKTUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKTUtils.mm; sourceTree = "<group>"; };
+		636FBB7E18F4C04E00E94CF4 /* bg_menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_menu2.png; sourceTree = "<group>"; };
+		636FBB8018F4C20F00E94CF4 /* pBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pBackground.png; sourceTree = "<group>"; };
+		636FBB8118F4C20F00E94CF4 /* pForeground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pForeground.png; sourceTree = "<group>"; };
+		636FBB8218F4C20F00E94CF4 /* pMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pMiddle.png; sourceTree = "<group>"; };
+		636FBB8618F4C58D00E94CF4 /* PBParallaxScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBParallaxScrolling.h; sourceTree = "<group>"; };
+		636FBB8718F4C58D00E94CF4 /* PBParallaxScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBParallaxScrolling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +143,22 @@
 		636FBB1A18F4717200E94CF4 = {
 			isa = PBXGroup;
 			children = (
+				633CE72618F4F4D200A6AB3F /* bg_0001.png */,
+				633CE72718F4F4D200A6AB3F /* bg_0002.png */,
+				633CE72818F4F4D200A6AB3F /* bg_0003.png */,
+				633CE72918F4F4D200A6AB3F /* bg_0004.png */,
+				633CE72A18F4F4D200A6AB3F /* bg_0005.png */,
+				633CE72B18F4F4D200A6AB3F /* mg_0001.png */,
+				633CE72C18F4F4D200A6AB3F /* mg_0002.png */,
+				633CE72D18F4F4D200A6AB3F /* mg_0003.png */,
+				633CE72E18F4F4D200A6AB3F /* mg_0004.png */,
+				636FBB8618F4C58D00E94CF4 /* PBParallaxScrolling.h */,
+				636FBB8718F4C58D00E94CF4 /* PBParallaxScrolling.m */,
+				636FBB8018F4C20F00E94CF4 /* pBackground.png */,
+				636FBB8118F4C20F00E94CF4 /* pForeground.png */,
+				636FBB8218F4C20F00E94CF4 /* pMiddle.png */,
+				636FBB7E18F4C04E00E94CF4 /* bg_menu2.png */,
+				636FBB6818F4844300E94CF4 /* SKTUtils */,
 				636FBB2E18F4717200E94CF4 /* ScrollingMenu */,
 				636FBB5518F4717200E94CF4 /* ScrollingMenuTests */,
 				636FBB2518F4717200E94CF4 /* Frameworks */,
@@ -129,9 +196,10 @@
 				636FBB3D18F4717200E94CF4 /* Main_iPad.storyboard */,
 				636FBB4018F4717200E94CF4 /* ViewController.h */,
 				636FBB4118F4717200E94CF4 /* ViewController.m */,
-				636FBB4318F4717200E94CF4 /* MyScene.h */,
-				636FBB4418F4717200E94CF4 /* MyScene.m */,
-				636FBB4618F4717200E94CF4 /* Spaceship.png */,
+				636FBB6518F47B0F00E94CF4 /* LevelsScroller.h */,
+				636FBB6618F47B0F00E94CF4 /* LevelsScroller.m */,
+				636FBB4318F4717200E94CF4 /* LevelsScene.h */,
+				636FBB4418F4717200E94CF4 /* LevelsScene.m */,
 				636FBB4818F4717200E94CF4 /* Images.xcassets */,
 				636FBB2F18F4717200E94CF4 /* Supporting Files */,
 			);
@@ -165,6 +233,27 @@
 				636FBB5818F4717200E94CF4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		636FBB6818F4844300E94CF4 /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				636FBB6918F4844300E94CF4 /* SKAction+SKTExtras.h */,
+				636FBB6A18F4844300E94CF4 /* SKAction+SKTExtras.m */,
+				636FBB6B18F4844300E94CF4 /* SKEmitterNode+SKTExtras.h */,
+				636FBB6C18F4844300E94CF4 /* SKEmitterNode+SKTExtras.m */,
+				636FBB6D18F4844300E94CF4 /* SKNode+SKTExtras.h */,
+				636FBB6E18F4844300E94CF4 /* SKNode+SKTExtras.m */,
+				636FBB6F18F4844300E94CF4 /* SKTAudio.h */,
+				636FBB7018F4844300E94CF4 /* SKTAudio.m */,
+				636FBB7118F4844300E94CF4 /* SKTEffects.h */,
+				636FBB7218F4844300E94CF4 /* SKTEffects.m */,
+				636FBB7318F4844300E94CF4 /* SKTTimingFunctions.h */,
+				636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */,
+				636FBB7518F4844300E94CF4 /* SKTUtils.h */,
+				636FBB7618F4844300E94CF4 /* SKTUtils.mm */,
+			);
+			path = SKTUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +332,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				636FBB4718F4717200E94CF4 /* Spaceship.png in Resources */,
+				633CE73018F4F4D200A6AB3F /* bg_0002.png in Resources */,
+				636FBB8318F4C20F00E94CF4 /* pBackground.png in Resources */,
+				633CE73518F4F4D200A6AB3F /* mg_0002.png in Resources */,
 				636FBB4918F4717200E94CF4 /* Images.xcassets in Resources */,
+				633CE73618F4F4D200A6AB3F /* mg_0003.png in Resources */,
+				633CE73718F4F4D200A6AB3F /* mg_0004.png in Resources */,
 				636FBB3F18F4717200E94CF4 /* Main_iPad.storyboard in Resources */,
+				633CE73318F4F4D200A6AB3F /* bg_0005.png in Resources */,
+				633CE73118F4F4D200A6AB3F /* bg_0003.png in Resources */,
+				633CE73418F4F4D200A6AB3F /* mg_0001.png in Resources */,
+				636FBB7F18F4C04E00E94CF4 /* bg_menu2.png in Resources */,
+				633CE73218F4F4D200A6AB3F /* bg_0004.png in Resources */,
+				636FBB8418F4C20F00E94CF4 /* pForeground.png in Resources */,
+				636FBB8518F4C20F00E94CF4 /* pMiddle.png in Resources */,
+				633CE72F18F4F4D200A6AB3F /* bg_0001.png in Resources */,
 				636FBB3C18F4717200E94CF4 /* Main_iPhone.storyboard in Resources */,
 				636FBB3318F4717200E94CF4 /* InfoPlist.strings in Resources */,
 			);
@@ -266,9 +367,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				636FBB4518F4717200E94CF4 /* MyScene.m in Sources */,
+				636FBB6718F47B0F00E94CF4 /* LevelsScroller.m in Sources */,
+				636FBB7B18F4844300E94CF4 /* SKTEffects.m in Sources */,
+				636FBB8818F4C58D00E94CF4 /* PBParallaxScrolling.m in Sources */,
+				636FBB4518F4717200E94CF4 /* LevelsScene.m in Sources */,
+				636FBB7818F4844300E94CF4 /* SKEmitterNode+SKTExtras.m in Sources */,
 				636FBB4218F4717200E94CF4 /* ViewController.m in Sources */,
+				636FBB7C18F4844300E94CF4 /* SKTTimingFunctions.m in Sources */,
+				636FBB7A18F4844300E94CF4 /* SKTAudio.m in Sources */,
+				636FBB7718F4844300E94CF4 /* SKAction+SKTExtras.m in Sources */,
+				636FBB7918F4844300E94CF4 /* SKNode+SKTExtras.m in Sources */,
 				636FBB3918F4717200E94CF4 /* AppDelegate.m in Sources */,
+				636FBB7D18F4844300E94CF4 /* SKTUtils.mm in Sources */,
 				636FBB3518F4717200E94CF4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +596,7 @@
 				636FBB6118F4717200E94CF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		636FBB6218F4717200E94CF4 /* Build configuration list for PBXNativeTarget "ScrollingMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +605,7 @@
 				636FBB6418F4717200E94CF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

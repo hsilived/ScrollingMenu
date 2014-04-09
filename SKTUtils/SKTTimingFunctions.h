@@ -1,0 +1,58 @@
+
+typedef float (^SKTTimingFunction)(float y);
+
+extern SKTTimingFunction SKTTimingFunctionLinear;
+
+extern SKTTimingFunction SKTTimingFunctionQuadraticEaseIn;
+extern SKTTimingFunction SKTTimingFunctionQuadraticEaseOut;
+extern SKTTimingFunction SKTTimingFunctionQuadraticEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionCubicEaseIn;
+extern SKTTimingFunction SKTTimingFunctionCubicEaseOut;
+extern SKTTimingFunction SKTTimingFunctionCubicEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionQuarticEaseIn;
+extern SKTTimingFunction SKTTimingFunctionQuarticEaseOut;
+extern SKTTimingFunction SKTTimingFunctionQuarticEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionQuinticEaseIn;
+extern SKTTimingFunction SKTTimingFunctionQuinticEaseOut;
+extern SKTTimingFunction SKTTimingFunctionQuinticEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionSineEaseIn;
+extern SKTTimingFunction SKTTimingFunctionSineEaseOut;
+extern SKTTimingFunction SKTTimingFunctionSineEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionCircularEaseIn;
+extern SKTTimingFunction SKTTimingFunctionCircularEaseOut;
+extern SKTTimingFunction SKTTimingFunctionCircularEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionExponentialEaseIn;
+extern SKTTimingFunction SKTTimingFunctionExponentialEaseOut;
+extern SKTTimingFunction SKTTimingFunctionExponentialEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionElasticEaseIn;
+extern SKTTimingFunction SKTTimingFunctionElasticEaseOut;
+extern SKTTimingFunction SKTTimingFunctionElasticEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionBackEaseIn;
+extern SKTTimingFunction SKTTimingFunctionBackEaseOut;
+extern SKTTimingFunction SKTTimingFunctionBackEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionExtremeBackEaseIn;
+extern SKTTimingFunction SKTTimingFunctionExtremeBackEaseOut;
+extern SKTTimingFunction SKTTimingFunctionExtremeBackEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionBounceEaseIn;
+extern SKTTimingFunction SKTTimingFunctionBounceEaseOut;
+extern SKTTimingFunction SKTTimingFunctionBounceEaseInOut;
+
+extern SKTTimingFunction SKTTimingFunctionSmoothstep;
+
+static __inline__ SKTTimingFunction SKTCreateShakeFunction(CGFloat oscillations)
+{
+	return ^(float t)
+	{
+		return -powf(2, -10 * t) * sinf(t * M_PI * oscillations * 2.0f) + 1.0f;
+	};
+}
