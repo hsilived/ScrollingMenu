@@ -8,11 +8,13 @@
 
 #import "LevelsScene.h"
 #import "LevelsScroller.h"
+#import "GameModel.h"
 
 @interface LevelsScene() {
     
+    GameModel *gameModel;
     LevelsScroller *levelsScroller;
-    CGPoint initialPosition, initialParallaxPosition;
+    CGPoint initialPosition, initialParallaxBackPosition, initialParallaxMidPosition;
     CGPoint initialTouch;
     int minimum_detect_distance;
     CGFloat moveAmtX;
@@ -21,10 +23,9 @@
     SKLabelNode *pageLabel;
     SKSpriteNode *parallaxBackground;
     SKSpriteNode *parallaxMidground;
+    LevelGrid *levelGrid;
     
 }
-
-//@property (nonatomic, strong) PBParallaxScrolling * parallaxBackground;
 
 @end
 
@@ -35,139 +36,53 @@
 - (id)initWithSize:(CGSize)size {
     
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
+        
+        gameModel = [GameModel sharedManager];
+        content = [[NSMutableArray alloc] init];
         
         self.anchorPoint = CGPointMake(0.5, 0.5);
         
-        //add background
-//        SKSpriteNode *menu = [SKSpriteNode spriteNodeWithImageNamed:@"bg_menu2"];
-//        menu.size = self.size;
-//        //menu.scale = [gameModel convertScale:1];
-//        menu.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-//        menu.zPosition = 0;
-//        [self addChild:menu];
-        
+        //add parallax backgrounds
         parallaxBackground = [self createParallaxBackground];
-        parallaxMidground = [self createParallaxMidground];
-        
         [self addChild:parallaxBackground];
         
-//        NSArray * imageNames = @[@"pForeground", @"pMiddle", @"pBackground"];
-//        PBParallaxScrolling * parallax = [[PBParallaxScrolling alloc] initWithBackgrounds:imageNames size:self.size direction:kPBParallaxBackgroundDirectionLeft fastestSpeed:kPBParallaxBackgroundDefaultSpeed andSpeedDecrease:kPBParallaxBackgroundDefaultSpeedDifferential];
-//        self.parallaxBackground = parallax;
-//        self.parallaxBackground.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-//        [self addChild:parallax];
+        parallaxMidground = [self createParallaxMidground];
+        [self addChild:parallaxMidground];
+
         
-        pagesCount = 8;
+        
         contentSize = CGSizeMake(500, 600);
         minimum_detect_distance = 200;
         
-        content = [[NSMutableArray alloc] init];
         self.currentPage = 1;
         
+        levelsScroller = [[LevelsScroller alloc] initWithSize:self.size];
+        levelsScroller.scrollDirection = VERTICAL;
+        
+        [self loadContent];
+        
+        
+        //temporary label at bottom of screen to show which page we are on
         pageLabel = [SKLabelNode labelNodeWithFontNamed:@"Arial"];
         pageLabel.position = CGPointMake(-(self.size.width / 2) + 20, -(self.size.height / 2) + 20);
         pageLabel.fontColor = [SKColor blackColor];
         pageLabel.zPosition = 50;
         pageLabel.text = @"1";
         [self addChild:pageLabel];
-        
-        [self loadContent];
     }
+    
     return self;
-}
-
-- (SKSpriteNode *)createParallaxBackground {
-
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[SKColor yellowColor] size:CGSizeMake(768, 3070)];
-    background.position = CGPointMake(0, 0);
-    //parallaxBackground.anchorPoint = CGPointZero;
-    background.zPosition = -100;
-    
-    SKSpriteNode *background1 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0001"];
-    background1.position = CGPointMake(0, -307);
-    [background addChild:background1];
-    
-    SKSpriteNode *background2 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0002"];
-    background2.position = CGPointMake(0, 307);
-    [background addChild:background2];
-    
-    SKSpriteNode *background3 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0003"];
-    background3.position = CGPointMake(0, 921);
-    [background addChild:background3];
-    
-    SKSpriteNode *background4 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0004"];
-    background4.position = CGPointMake(0, 1535);
-    [background addChild:background4];
-    
-    SKSpriteNode *background5 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0005"];
-    background5.position = CGPointMake(0, 2149);
-    [background addChild:background5];
-    
-    return background;
-}
-
-- (SKSpriteNode *)createParallaxMidground {
-    
-    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[SKColor yellowColor] size:CGSizeMake(768, 3070)];
-    background.position = CGPointMake(0, 0);
-    //parallaxBackground.anchorPoint = CGPointZero;
-    background.zPosition = -100;
-    
-    SKSpriteNode *background1 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0001"];
-    background1.position = CGPointMake(0, -307);
-    [background addChild:background1];
-    
-    SKSpriteNode *background2 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0002"];
-    background2.position = CGPointMake(0, 307);
-    [background addChild:background2];
-    
-    SKSpriteNode *background3 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0003"];
-    background3.position = CGPointMake(0, 921);
-    [background addChild:background3];
-    
-    SKSpriteNode *background4 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0004"];
-    background4.position = CGPointMake(0, 1535);
-    [background addChild:background4];
-    
-    SKSpriteNode *background5 = [SKSpriteNode spriteNodeWithImageNamed:@"bg_0005"];
-    background5.position = CGPointMake(0, 2149);
-    [background addChild:background5];
-    
-    return background;
 }
 
 - (void)setCurrentPage:(int)_currentPage {
     
     currentPage = _currentPage;
+    //changes the temporary label to show what the current page is
     pageLabel.text = [NSString stringWithFormat:@"%d", currentPage];
-}
-
-- (void)didMoveToView:(SKView *)view {
-    
-//    UISwipeGestureRecognizer* swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft)];
-//    [swipeLeftRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
-//    [self.view addGestureRecognizer:swipeLeftRecognizer];
-//    
-//    UISwipeGestureRecognizer* swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight)];
-//    [swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
-//    [self.view addGestureRecognizer:swipeRightRecognizer];
-//    
-//    UISwipeGestureRecognizer* swipeUpRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp)];
-//    [swipeUpRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
-//    [self.view addGestureRecognizer:swipeUpRecognizer];
-//    
-//    UISwipeGestureRecognizer* swipeDownRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown)];
-//    [swipeDownRecognizer setDirection:UISwipeGestureRecognizerDirectionDown];
-//    [self.view addGestureRecognizer:swipeDownRecognizer];
 }
 
 - (void)loadContent {
     
-    levelsScroller = [[LevelsScroller alloc] initWithSize:self.size];
-    
-    //levelsScroller.color = [SKColor whiteColor];
-    levelsScroller.scrollDirection = VERTICAL;
     [self addChild:levelsScroller];
     
     if (levelsScroller.scrollDirection == HORIZONTAL)
@@ -192,6 +107,8 @@
     content7.name = @"page7";
     SKSpriteNode *content8 = [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:contentSize];
     content8.name = @"page8";
+    SKSpriteNode *content9 = [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:contentSize];
+    content8.name = @"page9";
     
     [content addObject:content1];
     [content addObject:content2];
@@ -201,34 +118,26 @@
     [content addObject:content6];
     [content addObject:content7];
     [content addObject:content8];
+    [content addObject:content9];
     
-    for (SKSpriteNode *page in content) {
-        
+    pagesCount = (int)content.count;
+    
+    for (SKSpriteNode *page in content)
         [self loadPageContent:page];
-    }
     
-    [self setPagesInArray];
+    [self positionPages];
 }
 
 - (void)loadPageContent:(SKSpriteNode *)page {
     
     page.anchorPoint = CGPointZero;
     
-    for (int row = 0; row < 4; row++) {
-        
-        for (int col = 0; col < 4; col++) {
-            
-            CGFloat xPosition = col * 100 + (100 / 2) + (10 * col) + 10;
-            CGFloat yPosition = row * 100 + (100 / 2) + (10 * row) + 10;
-            SKSpriteNode *contentIcon = [SKSpriteNode spriteNodeWithColor:[SKColor blueColor] size:CGSizeMake(100, 100)];
-            contentIcon.position = CGPointMake(xPosition, yPosition);
-            [page addChild:contentIcon];
-        }
-    }
-    
+    levelGrid = [[LevelGrid alloc] initWithSize:CGSizeMake(4, 5)];
+    //levelGrid.position = CGPointMake((self.size.width - levelGrid.size.width) / 2, (self.size.height - levelGrid.size.height) / 2);
+    [page addChild:levelGrid];
 }
 
-- (void)setPagesInArray {
+- (void)positionPages {
     
 	for (int i = 0; i < pagesCount; i++) {
         
@@ -243,97 +152,161 @@
 	}
 }
 
+#pragma mark - move methods
+
 - (void)swipeLeft {
-    
-    if (levelsScroller.scrollDirection == VERTICAL)
-        return;
     
     if (self.currentPage == pagesCount) {
         
-        [self reset];
+        [self resetLevels];
         return;
     }
-    
-    int moveTo = -(self.currentPage * self.size.width);
-    
-    SKAction *move = [SKAction moveToX:moveTo duration:0.4];
-    move.timingMode = SKActionTimingEaseIn;
-    [levelsScroller runAction:move];
+
+    [self moveActions:-(self.currentPage * self.size.width)];
     
     self.currentPage++;
 }
 
 - (void)swipeRight {
     
-    if (levelsScroller.scrollDirection == VERTICAL)
-        return;
-    
     if (self.currentPage == 1) {
         
-        [self reset];
+        [self resetLevels];
         return;
     }
     
     self.currentPage--;
     
-    int moveTo = -((self.currentPage - 1) * self.size.width);
-    
-    SKAction *move = [SKAction moveToX:moveTo duration:0.4];
-    move.timingMode = SKActionTimingEaseIn;
-    [levelsScroller runAction:move]; 
+    [self moveActions:-((self.currentPage - 1) * self.size.width)];
 }
 
 - (void)swipeUp {
     
-    if (levelsScroller.scrollDirection == HORIZONTAL)
-        return;
-    
     if (self.currentPage == 1) {
         
-        [self reset];
+        [self resetLevels];
         return;
     }
     
     self.currentPage--;
     
-    int moveTo = -((self.currentPage - 1) * self.size.height);
-    
-    SKAction *move = [SKAction moveToY:(moveTo * 0.2) duration:0.5];
-    move.timingMode = SKActionTimingEaseIn;
-    [parallaxBackground runAction:move];
-    
-    move = [SKAction moveToY:moveTo duration:0.5];
-    move.timingMode = SKActionTimingEaseInEaseOut;
-    [levelsScroller runAction:move];
+    [self moveActions:-((self.currentPage - 1) * self.size.height)];
 }
 
 - (void)swipeDown {
     
-    if (levelsScroller.scrollDirection == HORIZONTAL)
-        return;
-    
     if (self.currentPage == pagesCount) {
         
-        [self reset];
+        [self resetLevels];
         return;
     }
     
-    int moveTo = -(self.currentPage * self.size.height);
-    
-    SKAction *move = [SKAction moveToY:(moveTo * 0.2) duration:0.5];
-    move.timingMode = SKActionTimingEaseIn;
-    [parallaxBackground runAction:move];
-    
-    
-    move = [SKAction moveToY:moveTo duration:0.5];
-    move.timingMode = SKActionTimingEaseIn;
-    [levelsScroller runAction:move];
+    [self moveActions:-(self.currentPage * self.size.height)];
     
     self.currentPage++;
 }
 
-- (void)reset {
-   
+- (void)moveActions:(int)moveTo {
+    
+    //this is the amount that we need to scroll the level scroller as well as the amount that we need to scroll the parallax background
+    SKAction *move = [SKAction moveToY:(moveTo * 0.2) duration:0.5];
+    move.timingMode = SKActionTimingEaseIn;
+    [parallaxBackground runAction:move];
+    
+    move = [SKAction moveToY:(moveTo * 0.3) duration:0.5];
+    move.timingMode = SKActionTimingEaseIn;
+    [parallaxMidground runAction:move];
+    
+    move = [SKAction moveToY:moveTo duration:0.5];
+    move.timingMode = SKActionTimingEaseIn;
+    [levelsScroller runAction:move];
+}
+
+#pragma mark - touch methods
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    initialTouch = [touch locationInView:self.view];
+    initialPosition = levelsScroller.position;
+    initialParallaxBackPosition = parallaxBackground.position;
+    initialParallaxMidPosition = parallaxMidground.position;
+    moveAmtX = 0;
+    moved = NO;
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint movingPoint = [touch locationInView:self.view];
+    
+    moveAmtX = movingPoint.x - initialTouch.x;
+    moveAmtY = movingPoint.y - initialTouch.y;
+
+    if (levelsScroller.scrollDirection == HORIZONTAL) {
+        
+        levelsScroller.position = CGPointMake(initialPosition.x + moveAmtX, initialPosition.y);
+        parallaxBackground.position = CGPointMake(initialParallaxBackPosition.x + moveAmtX * 0.2, initialParallaxBackPosition.y);
+        parallaxMidground.position = CGPointMake(initialParallaxMidPosition.x + moveAmtX * 0.4, initialParallaxMidPosition.y);
+    }
+    else {
+        
+        levelsScroller.position = CGPointMake(initialPosition.x, initialPosition.y - moveAmtY);
+        parallaxBackground.position = CGPointMake(initialParallaxBackPosition.x, initialParallaxBackPosition.y - moveAmtY * 0.2);
+        parallaxMidground.position = CGPointMake(initialParallaxMidPosition.x, initialParallaxMidPosition.y - moveAmtY * 0.4);
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    if (levelsScroller.scrollDirection == HORIZONTAL) {
+        
+        if ((abs(moveAmtX) < minimum_detect_distance) || (abs(moveAmtX) && !moved))
+            [self resetLevels];
+        
+        if (!moved && moveAmtX < -(minimum_detect_distance)) {
+            
+            moved = YES;
+            [self swipeLeft];
+        }
+        else if (!moved && moveAmtX > minimum_detect_distance) {
+            
+            moved = YES;
+            [self swipeRight];
+        }
+        
+        if (levelsScroller.position.x > 0)
+            [self resetLevels];
+        else if (abs(levelsScroller.position.x) > (self.size.width * (pagesCount - 1)))
+            [self resetLevels];
+    }
+    else {
+        
+        if ((abs(moveAmtY) < minimum_detect_distance) || (abs(moveAmtY) && !moved))
+            [self resetLevels];
+        
+        if (!moved && moveAmtY < -(minimum_detect_distance)) {
+            
+            moved = YES;
+            [self swipeUp];
+        }
+        else if (!moved && moveAmtY > minimum_detect_distance) {
+            
+            moved = YES;
+            [self swipeDown];
+        }
+        
+        if (levelsScroller.position.y > 0)
+            [self resetLevels];
+        else if (abs(levelsScroller.position.y) > (self.size.height * (pagesCount - 1)))
+            [self resetLevels];
+    }
+    
+    moved = NO;
+}
+
+- (void)resetLevels {
+    
     if (levelsScroller.scrollDirection == HORIZONTAL) {
         
         int moveTo = -((self.currentPage - 1) * self.size.width);
@@ -350,103 +323,90 @@
         move.timingMode = SKActionTimingEaseIn;
         [parallaxBackground runAction:move];
         
+        move = [SKAction moveToY:(moveTo * 0.3) duration:0.5];
+        move.timingMode = SKActionTimingEaseIn;
+        [parallaxMidground runAction:move];
+        
         move = [SKAction moveToY:moveTo duration:0.1];
         move.timingMode = SKActionTimingEaseIn;
         [levelsScroller runAction:move];
     }
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    NSLog(@"minimum_detect_distance %d", minimum_detect_distance);
-    
-    UITouch *touch = [touches anyObject];
-    initialTouch = [touch locationInView:self.view];
-    initialPosition = levelsScroller.position;
-    initialParallaxPosition = parallaxBackground.position;
-    moveAmtX = 0;
-    moved = NO;
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [touches anyObject];
-    CGPoint movingPoint = [touch locationInView:self.view];
-    
-    moveAmtX = movingPoint.x - initialTouch.x;
-    moveAmtY = movingPoint.y - initialTouch.y;
-
-    NSLog(@"movingPoint.x %f", movingPoint.x);
-    NSLog(@"movingPoint.y %f", movingPoint.y);
-    NSLog(@"moveAmtX %f", moveAmtX);
-    NSLog(@"moveAmtY %f", moveAmtY);
-    
-    if (levelsScroller.scrollDirection == HORIZONTAL) {
-        
-        if (!moved && moveAmtX < -(minimum_detect_distance)) {
-            
-            moved = YES;
-            [self swipeLeft];
-        }
-        else if (!moved && moveAmtX > minimum_detect_distance) {
-            
-            moved = YES;
-            [self swipeRight];
-        }
-        else {
-
-            levelsScroller.position = CGPointMake(initialPosition.x + moveAmtX, initialPosition.y);
-            parallaxBackground.position = CGPointMake(initialParallaxPosition.x + (moveAmtX * 0.606), initialParallaxPosition.y);
-        }
-    }
-    else {
-        
-        if (!moved && moveAmtY < -(minimum_detect_distance)) {
-            
-            moved = YES;
-            [self swipeUp];
-        }
-        else if (!moved && moveAmtY > minimum_detect_distance) {
-            
-            moved = YES;
-            [self swipeDown];
-        }
-        else {
-            
-            levelsScroller.position = CGPointMake(initialPosition.x, initialPosition.y - moveAmtY);
-            parallaxBackground.position = CGPointMake(initialParallaxPosition.x, initialParallaxPosition.y - (moveAmtY * 0.2));
-        }
-    }
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if (levelsScroller.scrollDirection == HORIZONTAL) {
-        
-        if ((abs(moveAmtX) < minimum_detect_distance) || (abs(moveAmtX) && !moved))
-            [self reset];
-        
-        if (levelsScroller.position.x > 0)
-            [self reset];
-        else if (abs(levelsScroller.position.x) > (self.size.width * (pagesCount - 1)))
-            [self reset];
-    }
-    else {
-        
-        if ((abs(moveAmtY) < minimum_detect_distance) || (abs(moveAmtY) && !moved))
-            [self reset];
-        
-        if (levelsScroller.position.y > 0)
-            [self reset];
-        else if (abs(levelsScroller.position.y) > (self.size.height * (pagesCount - 1)))
-            [self reset];
-    }
-}
-
 -(void)update:(CFTimeInterval)currentTime {
     
     /* Called before each frame is rendered */
-    //[self.parallaxBackground update:currentTime];
 }
+
+- (void)levelSelected:(NSInteger)level {
+    
+
+}
+
+
+#pragma mark - Parallax methods
+
+- (SKSpriteNode *)createParallaxBackground {
+    
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:CGSizeMake(768, 3070)];
+    background.position = CGPointMake(0, 0);
+    background.zPosition = -100;
+    
+    SKSpriteNode *background1 = [SKSpriteNode spriteNodeWithImageNamed:@"bg0001"];
+    background1.position = CGPointMake(0, -307);
+    [background addChild:background1];
+    
+    SKSpriteNode *background2 = [SKSpriteNode spriteNodeWithImageNamed:@"bg0002"];
+    background2.position = CGPointMake(0, 307);
+    [background addChild:background2];
+    
+    SKSpriteNode *background3 = [SKSpriteNode spriteNodeWithImageNamed:@"bg0003"];
+    background3.position = CGPointMake(0, 921);
+    [background addChild:background3];
+    
+    SKSpriteNode *background4 = [SKSpriteNode spriteNodeWithImageNamed:@"bg0004"];
+    background4.position = CGPointMake(0, 1535);
+    [background addChild:background4];
+    
+    SKSpriteNode *background5 = [SKSpriteNode spriteNodeWithImageNamed:@"bg0005"];
+    background5.position = CGPointMake(0, 2149);
+    [background addChild:background5];
+    
+    return background;
+}
+
+- (SKSpriteNode *)createParallaxMidground {
+    
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:CGSizeMake(768, 3684)];
+    background.position = CGPointMake(0, 0);
+    background.zPosition = -99;
+    
+    SKSpriteNode *background1 = [SKSpriteNode spriteNodeWithImageNamed:@"mg0001"];
+    background1.position = CGPointMake(0, -307);
+    [background addChild:background1];
+    
+    SKSpriteNode *background2 = [SKSpriteNode spriteNodeWithImageNamed:@"mg0002"];
+    background2.position = CGPointMake(0, 307);
+    [background addChild:background2];
+    
+    SKSpriteNode *background3 = [SKSpriteNode spriteNodeWithImageNamed:@"mg0004"];
+    background3.position = CGPointMake(0, 921);
+    [background addChild:background3];
+    
+    SKSpriteNode *background4 = [SKSpriteNode spriteNodeWithImageNamed:@"mg0004"];
+    background4.position = CGPointMake(0, 1535);
+    [background addChild:background4];
+    
+    SKSpriteNode *background5 = [SKSpriteNode spriteNodeWithImageNamed:@"mg0005"];
+    background5.position = CGPointMake(0, 2149);
+    [background addChild:background5];
+    
+    SKSpriteNode *background6 = [SKSpriteNode spriteNodeWithImageNamed:@"mg0004"];
+    background6.position = CGPointMake(0, 2763);
+    [background addChild:background6];
+    
+    return background;
+}
+
 
 @end

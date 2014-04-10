@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "LevelGrid.h"
 
 @interface LevelsScene : SKScene
 
@@ -14,5 +15,8 @@
 @property (nonatomic, assign) int currentPage;
 @property (nonatomic) CGSize contentSize;
 @property (strong, nonatomic) NSMutableArray *content;
+@property (strong, nonatomic) NSMutableDictionary *levels;
+
+- (void)levelSelected:(NSInteger)level;
 
 @end
