@@ -1,6 +1,6 @@
 //
 //  MenuLevel.h
-//  MenuLevel
+//  ScrollingMenu
 //
 //  Created by DeviL on 1/22/2014.
 //  Copyright (c) 2014 Orange Think Box. All rights reserved.

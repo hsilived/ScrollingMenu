@@ -25,13 +25,6 @@
 		636FBB5A18F4717200E94CF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 636FBB5818F4717200E94CF4 /* InfoPlist.strings */; };
 		636FBB5C18F4717200E94CF4 /* ScrollingMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB5B18F4717200E94CF4 /* ScrollingMenuTests.m */; };
 		636FBB6718F47B0F00E94CF4 /* LevelsScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6618F47B0F00E94CF4 /* LevelsScroller.m */; };
-		636FBB7718F4844300E94CF4 /* SKAction+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6A18F4844300E94CF4 /* SKAction+SKTExtras.m */; };
-		636FBB7818F4844300E94CF4 /* SKEmitterNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6C18F4844300E94CF4 /* SKEmitterNode+SKTExtras.m */; };
-		636FBB7918F4844300E94CF4 /* SKNode+SKTExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB6E18F4844300E94CF4 /* SKNode+SKTExtras.m */; };
-		636FBB7A18F4844300E94CF4 /* SKTAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7018F4844300E94CF4 /* SKTAudio.m */; };
-		636FBB7B18F4844300E94CF4 /* SKTEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7218F4844300E94CF4 /* SKTEffects.m */; };
-		636FBB7C18F4844300E94CF4 /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */; };
-		636FBB7D18F4844300E94CF4 /* SKTUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7618F4844300E94CF4 /* SKTUtils.mm */; };
 		63A887A618F6014B00F8673C /* LevelGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887A318F6014B00F8673C /* LevelGrid.m */; };
 		63A887AB18F6024C00F8673C /* LevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887AA18F6024C00F8673C /* LevelButton.m */; };
 		63A887B018F6241F00F8673C /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887AF18F6241F00F8673C /* GameModel.m */; };
@@ -94,20 +87,6 @@
 		636FBB5B18F4717200E94CF4 /* ScrollingMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollingMenuTests.m; sourceTree = "<group>"; };
 		636FBB6518F47B0F00E94CF4 /* LevelsScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelsScroller.h; sourceTree = "<group>"; };
 		636FBB6618F47B0F00E94CF4 /* LevelsScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelsScroller.m; sourceTree = "<group>"; };
-		636FBB6918F4844300E94CF4 /* SKAction+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKAction+SKTExtras.h"; sourceTree = "<group>"; };
-		636FBB6A18F4844300E94CF4 /* SKAction+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKAction+SKTExtras.m"; sourceTree = "<group>"; };
-		636FBB6B18F4844300E94CF4 /* SKEmitterNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+SKTExtras.h"; sourceTree = "<group>"; };
-		636FBB6C18F4844300E94CF4 /* SKEmitterNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+SKTExtras.m"; sourceTree = "<group>"; };
-		636FBB6D18F4844300E94CF4 /* SKNode+SKTExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+SKTExtras.h"; sourceTree = "<group>"; };
-		636FBB6E18F4844300E94CF4 /* SKNode+SKTExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+SKTExtras.m"; sourceTree = "<group>"; };
-		636FBB6F18F4844300E94CF4 /* SKTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTAudio.h; sourceTree = "<group>"; };
-		636FBB7018F4844300E94CF4 /* SKTAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTAudio.m; sourceTree = "<group>"; };
-		636FBB7118F4844300E94CF4 /* SKTEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTEffects.h; sourceTree = "<group>"; };
-		636FBB7218F4844300E94CF4 /* SKTEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTEffects.m; sourceTree = "<group>"; };
-		636FBB7318F4844300E94CF4 /* SKTTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTTimingFunctions.h; sourceTree = "<group>"; };
-		636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTTimingFunctions.m; sourceTree = "<group>"; };
-		636FBB7518F4844300E94CF4 /* SKTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTUtils.h; sourceTree = "<group>"; };
-		636FBB7618F4844300E94CF4 /* SKTUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKTUtils.mm; sourceTree = "<group>"; };
 		63A887A218F6014B00F8673C /* LevelGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGrid.h; sourceTree = "<group>"; };
 		63A887A318F6014B00F8673C /* LevelGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGrid.m; sourceTree = "<group>"; };
 		63A887A818F6016800F8673C /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
@@ -171,7 +150,6 @@
 				63A887D718F627B800F8673C /* Resources */,
 				63A8880318F6FF5100F8673C /* Worlds.plist */,
 				63A887E118F627B800F8673C /* Levels.plist */,
-				636FBB6818F4844300E94CF4 /* SKTUtils */,
 				636FBB2E18F4717200E94CF4 /* ScrollingMenu */,
 				636FBB5518F4717200E94CF4 /* ScrollingMenuTests */,
 				636FBB2518F4717200E94CF4 /* Frameworks */,
@@ -257,27 +235,6 @@
 				636FBB5818F4717200E94CF4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		636FBB6818F4844300E94CF4 /* SKTUtils */ = {
-			isa = PBXGroup;
-			children = (
-				636FBB6918F4844300E94CF4 /* SKAction+SKTExtras.h */,
-				636FBB6A18F4844300E94CF4 /* SKAction+SKTExtras.m */,
-				636FBB6B18F4844300E94CF4 /* SKEmitterNode+SKTExtras.h */,
-				636FBB6C18F4844300E94CF4 /* SKEmitterNode+SKTExtras.m */,
-				636FBB6D18F4844300E94CF4 /* SKNode+SKTExtras.h */,
-				636FBB6E18F4844300E94CF4 /* SKNode+SKTExtras.m */,
-				636FBB6F18F4844300E94CF4 /* SKTAudio.h */,
-				636FBB7018F4844300E94CF4 /* SKTAudio.m */,
-				636FBB7118F4844300E94CF4 /* SKTEffects.h */,
-				636FBB7218F4844300E94CF4 /* SKTEffects.m */,
-				636FBB7318F4844300E94CF4 /* SKTTimingFunctions.h */,
-				636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */,
-				636FBB7518F4844300E94CF4 /* SKTUtils.h */,
-				636FBB7618F4844300E94CF4 /* SKTUtils.mm */,
-			);
-			path = SKTUtils;
 			sourceTree = "<group>";
 		};
 		63A887D718F627B800F8673C /* Resources */ = {
@@ -452,19 +409,12 @@
 				63A887A618F6014B00F8673C /* LevelGrid.m in Sources */,
 				63A887B018F6241F00F8673C /* GameModel.m in Sources */,
 				636FBB6718F47B0F00E94CF4 /* LevelsScroller.m in Sources */,
-				636FBB7B18F4844300E94CF4 /* SKTEffects.m in Sources */,
 				636FBB4518F4717200E94CF4 /* LevelsScene.m in Sources */,
-				636FBB7818F4844300E94CF4 /* SKEmitterNode+SKTExtras.m in Sources */,
 				636FBB4218F4717200E94CF4 /* ViewController.m in Sources */,
-				636FBB7C18F4844300E94CF4 /* SKTTimingFunctions.m in Sources */,
 				63A8880718F70CAE00F8673C /* World.m in Sources */,
-				636FBB7A18F4844300E94CF4 /* SKTAudio.m in Sources */,
-				636FBB7718F4844300E94CF4 /* SKAction+SKTExtras.m in Sources */,
 				63A8880D18F710EC00F8673C /* Level.m in Sources */,
-				636FBB7918F4844300E94CF4 /* SKNode+SKTExtras.m in Sources */,
 				636FBB3918F4717200E94CF4 /* AppDelegate.m in Sources */,
 				63A887AB18F6024C00F8673C /* LevelButton.m in Sources */,
-				636FBB7D18F4844300E94CF4 /* SKTUtils.mm in Sources */,
 				636FBB3518F4717200E94CF4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

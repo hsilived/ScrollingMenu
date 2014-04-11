@@ -1,6 +1,6 @@
 //
 //  LevelButton.h
-//  match3
+//  ScrollingMenu
 //
 //  Created by DeviL on 1/24/2014.
 //  Copyright (c) 2014 Orange Think Box. All rights reserved.

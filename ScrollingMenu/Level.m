@@ -1,9 +1,9 @@
 //
 //  Level.m
+//  ScrollingMenu
 //
-//  Created by DeviL on 2013-01-30.
-//
-//
+//  Created by DeviL on 2014-04-10.
+//  Copyright (c) 2014 Orange Think Box. All rights reserved.
 
 #import "Level.h"
 #import "GameModel.h"
