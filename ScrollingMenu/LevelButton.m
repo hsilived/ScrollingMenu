@@ -13,6 +13,7 @@
 @interface LevelButton() {
     
     int levelFontSize;
+    BOOL selecting;
 }
 
 @property (nonatomic, readonly) LevelsScene *levelScene;
@@ -52,9 +53,7 @@
     self = [super initWithColor:[SKColor clearColor] size:size];
     
     if (self) {
-        
-        //self.anchorPoint = CGPointZero;
-        //background image
+
         bgImage = [SKSpriteNode spriteNodeWithColor:[SKColor clearColor] size:size];
         bgImage.anchorPoint = CGPointMake(0.5, 0.5);
         bgImage.position = CGPointMake(-(self.frame.size.width / 2) + self.size.width - kLevelIconSize / 2, -(self.frame.size.height / 2) + self.size.height - kLevelIconSize / 2);
@@ -94,7 +93,7 @@
     isLocked = locked;
     
     // lock image
-    lockSprite = [SKSpriteNode spriteNodeWithImageNamed:kLevelLockFileName];
+    lockSprite = [SKSpriteNode spriteNodeWithImageNamed:@"lock"];
     lockSprite.hidden = !isLocked;
     textLabel.hidden = isLocked;
     [bgImage addChild:lockSprite];
@@ -143,35 +142,62 @@
     _actionTouchDown = action;
 }
 
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     objc_msgSend(_targetTouchDown, _actionTouchDown);
     //[self setIsSelected:YES];
-    [self runAction:[self selectLevel] completion:^{
+    [self.levelScene touchesBegan:touches withEvent:event];
     
-        [self runAction:_buttonSound];
-        
-        int level = self.name.intValue;
-        
-        [self.levelScene levelSelected:level];
-    }];
-    
+    SKAction *squish = [SKAction scaleXTo:0.8 y:0.8 duration:0.1];
+    [self runAction:squish];
+    selecting = YES;
 }
 
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    objc_msgSend(_targetTouchMoved, _actionTouchMoved);
+    [self.levelScene touchesMoved:touches withEvent:event];
+    
+    SKAction *normal = [SKAction scaleXTo:1.0 y:1.0 duration:0.1];
+    [self runAction:normal];
+    selecting = NO;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    //objc_msgSend(_targetTouchMoved, _actionTouchMoved);
+    [self.levelScene touchesEnded:touches withEvent:event];
+    
+    if (selecting) {
+        
+        [self runAction:[self selectLevel] completion:^{
+            
+            [self runAction:_buttonSound];
+            
+            int level = self.name.intValue;
+            
+            [self.levelScene levelSelected:level];
+        }];
+    }
+}
 
 - (SKAction *)selectLevel {
     
     self.zPosition = 1;
     
-    SKAction *squish = [SKAction scaleXTo:1.2 y:0.8 duration:0.2];
+    SKAction *squish = [SKAction scaleXTo:1.2 y:0.8 duration:0.1];
+    squish.timingMode = SKActionTimingEaseInEaseOut;
     SKAction *moveDownSquish = [SKAction moveByX:0.0 y:10 duration:0.2];
+    moveDownSquish.timingMode = SKActionTimingEaseInEaseOut;
     //SKAction *squishSound = [self squishSound];
     
-    SKAction *grow = [SKAction scaleXTo:0.8 y:1.2 duration:0.3];
+    SKAction *grow = [SKAction scaleXTo:0.8 y:1.2 duration:0.2];
+    grow.timingMode = SKActionTimingEaseInEaseOut;
     
     SKAction *normal = [SKAction scaleXTo:1.0 y:1.0 duration:0.2];
+    normal.timingMode = SKActionTimingEaseInEaseOut;
     SKAction *moveUpNormal = [SKAction moveByX:0.0 y:-10 duration:0.2];
+    moveUpNormal.timingMode = SKActionTimingEaseInEaseOut;
     
     SKAction *groupSquish = [SKAction group:@[squish]];
     SKAction *groupGrow = [SKAction group:@[moveDownSquish, grow]];

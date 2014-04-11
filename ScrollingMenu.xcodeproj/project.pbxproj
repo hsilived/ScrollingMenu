@@ -33,15 +33,13 @@
 		636FBB7C18F4844300E94CF4 /* SKTTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7418F4844300E94CF4 /* SKTTimingFunctions.m */; };
 		636FBB7D18F4844300E94CF4 /* SKTUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 636FBB7618F4844300E94CF4 /* SKTUtils.mm */; };
 		63A887A618F6014B00F8673C /* LevelGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887A318F6014B00F8673C /* LevelGrid.m */; };
-		63A887A718F6014B00F8673C /* LevelGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887A518F6014B00F8673C /* LevelGridItem.m */; };
 		63A887AB18F6024C00F8673C /* LevelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887AA18F6024C00F8673C /* LevelButton.m */; };
 		63A887B018F6241F00F8673C /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A887AF18F6241F00F8673C /* GameModel.m */; };
 		63A887EF18F627B800F8673C /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887D918F627B800F8673C /* button.png */; };
 		63A887F118F627B800F8673C /* levelStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887DB18F627B800F8673C /* levelStar.png */; };
 		63A887F218F627B800F8673C /* levelStar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887DC18F627B800F8673C /* levelStar@2x.png */; };
 		63A887F318F627B800F8673C /* levelStar_low.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887DD18F627B800F8673C /* levelStar_low.png */; };
-		63A887F418F627B800F8673C /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887DE18F627B800F8673C /* lock.png */; };
-		63A887F518F627B800F8673C /* lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887DF18F627B800F8673C /* lock@2x.png */; };
+		63A887F518F627B800F8673C /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887DF18F627B800F8673C /* lock.png */; };
 		63A887F618F627B800F8673C /* star_low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887E018F627B800F8673C /* star_low@2x.png */; };
 		63A887F718F627B800F8673C /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A887E118F627B800F8673C /* Levels.plist */; };
 		63A887F818F627B800F8673C /* bg0001.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887E318F627B800F8673C /* bg0001.png */; };
@@ -53,8 +51,11 @@
 		63A887FE18F627B800F8673C /* mg0002.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887E918F627B800F8673C /* mg0002.png */; };
 		63A887FF18F627B800F8673C /* mg0004.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887EA18F627B800F8673C /* mg0004.png */; };
 		63A8880018F627B800F8673C /* mg0005.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887EB18F627B800F8673C /* mg0005.png */; };
-		63A8880118F627B800F8673C /* mg_0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887EC18F627B800F8673C /* mg_0003.png */; };
+		63A8880118F627B800F8673C /* mg0003.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A887EC18F627B800F8673C /* mg0003.png */; };
 		63A8880218F627B800F8673C /* tap.caf in Resources */ = {isa = PBXBuildFile; fileRef = 63A887EE18F627B800F8673C /* tap.caf */; };
+		63A8880418F6FF5100F8673C /* Worlds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63A8880318F6FF5100F8673C /* Worlds.plist */; };
+		63A8880718F70CAE00F8673C /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A8880618F70CAE00F8673C /* World.m */; };
+		63A8880D18F710EC00F8673C /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A8880C18F710EC00F8673C /* Level.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +110,6 @@
 		636FBB7618F4844300E94CF4 /* SKTUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SKTUtils.mm; sourceTree = "<group>"; };
 		63A887A218F6014B00F8673C /* LevelGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGrid.h; sourceTree = "<group>"; };
 		63A887A318F6014B00F8673C /* LevelGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGrid.m; sourceTree = "<group>"; };
-		63A887A418F6014B00F8673C /* LevelGridItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelGridItem.h; sourceTree = "<group>"; };
-		63A887A518F6014B00F8673C /* LevelGridItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelGridItem.m; sourceTree = "<group>"; };
 		63A887A818F6016800F8673C /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		63A887A918F6024C00F8673C /* LevelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelButton.h; sourceTree = "<group>"; };
 		63A887AA18F6024C00F8673C /* LevelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelButton.m; sourceTree = "<group>"; };
@@ -120,8 +119,7 @@
 		63A887DB18F627B800F8673C /* levelStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelStar.png; sourceTree = "<group>"; };
 		63A887DC18F627B800F8673C /* levelStar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "levelStar@2x.png"; sourceTree = "<group>"; };
 		63A887DD18F627B800F8673C /* levelStar_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelStar_low.png; sourceTree = "<group>"; };
-		63A887DE18F627B800F8673C /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
-		63A887DF18F627B800F8673C /* lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lock@2x.png"; sourceTree = "<group>"; };
+		63A887DF18F627B800F8673C /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		63A887E018F627B800F8673C /* star_low@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_low@2x.png"; sourceTree = "<group>"; };
 		63A887E118F627B800F8673C /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Levels.plist; path = ScrollingMenu/Resources/Levels.plist; sourceTree = "<group>"; };
 		63A887E318F627B800F8673C /* bg0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg0001.png; sourceTree = "<group>"; };
@@ -133,8 +131,13 @@
 		63A887E918F627B800F8673C /* mg0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg0002.png; sourceTree = "<group>"; };
 		63A887EA18F627B800F8673C /* mg0004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg0004.png; sourceTree = "<group>"; };
 		63A887EB18F627B800F8673C /* mg0005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg0005.png; sourceTree = "<group>"; };
-		63A887EC18F627B800F8673C /* mg_0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg_0003.png; sourceTree = "<group>"; };
+		63A887EC18F627B800F8673C /* mg0003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mg0003.png; sourceTree = "<group>"; };
 		63A887EE18F627B800F8673C /* tap.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tap.caf; sourceTree = "<group>"; };
+		63A8880318F6FF5100F8673C /* Worlds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Worlds.plist; path = ScrollingMenu/Resources/Worlds.plist; sourceTree = "<group>"; };
+		63A8880518F70CAE00F8673C /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		63A8880618F70CAE00F8673C /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
+		63A8880B18F710EC00F8673C /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		63A8880C18F710EC00F8673C /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				63A887D718F627B800F8673C /* Resources */,
+				63A8880318F6FF5100F8673C /* Worlds.plist */,
 				63A887E118F627B800F8673C /* Levels.plist */,
 				636FBB6818F4844300E94CF4 /* SKTUtils */,
 				636FBB2E18F4717200E94CF4 /* ScrollingMenu */,
@@ -199,6 +203,10 @@
 		636FBB2E18F4717200E94CF4 /* ScrollingMenu */ = {
 			isa = PBXGroup;
 			children = (
+				63A8880B18F710EC00F8673C /* Level.h */,
+				63A8880C18F710EC00F8673C /* Level.m */,
+				63A8880518F70CAE00F8673C /* World.h */,
+				63A8880618F70CAE00F8673C /* World.m */,
 				63A887AE18F6241F00F8673C /* GameModel.h */,
 				63A887AF18F6241F00F8673C /* GameModel.m */,
 				63A887A918F6024C00F8673C /* LevelButton.h */,
@@ -206,8 +214,6 @@
 				63A887A818F6016800F8673C /* GameConfig.h */,
 				63A887A218F6014B00F8673C /* LevelGrid.h */,
 				63A887A318F6014B00F8673C /* LevelGrid.m */,
-				63A887A418F6014B00F8673C /* LevelGridItem.h */,
-				63A887A518F6014B00F8673C /* LevelGridItem.m */,
 				636FBB3718F4717200E94CF4 /* AppDelegate.h */,
 				636FBB3818F4717200E94CF4 /* AppDelegate.m */,
 				636FBB3A18F4717200E94CF4 /* Main_iPhone.storyboard */,
@@ -292,8 +298,7 @@
 				63A887DB18F627B800F8673C /* levelStar.png */,
 				63A887DC18F627B800F8673C /* levelStar@2x.png */,
 				63A887DD18F627B800F8673C /* levelStar_low.png */,
-				63A887DE18F627B800F8673C /* lock.png */,
-				63A887DF18F627B800F8673C /* lock@2x.png */,
+				63A887DF18F627B800F8673C /* lock.png */,
 				63A887E018F627B800F8673C /* star_low@2x.png */,
 			);
 			path = "Level Images";
@@ -311,7 +316,7 @@
 				63A887E918F627B800F8673C /* mg0002.png */,
 				63A887EA18F627B800F8673C /* mg0004.png */,
 				63A887EB18F627B800F8673C /* mg0005.png */,
-				63A887EC18F627B800F8673C /* mg_0003.png */,
+				63A887EC18F627B800F8673C /* mg0003.png */,
 			);
 			path = "Parallax Images";
 			sourceTree = "<group>";
@@ -409,23 +414,23 @@
 				63A887FC18F627B800F8673C /* bg0005.png in Resources */,
 				63A887FB18F627B800F8673C /* bg0004.png in Resources */,
 				63A887EF18F627B800F8673C /* button.png in Resources */,
-				63A887F518F627B800F8673C /* lock@2x.png in Resources */,
+				63A887F518F627B800F8673C /* lock.png in Resources */,
 				63A887F818F627B800F8673C /* bg0001.png in Resources */,
 				636FBB3F18F4717200E94CF4 /* Main_iPad.storyboard in Resources */,
 				63A887FE18F627B800F8673C /* mg0002.png in Resources */,
 				636FBB3C18F4717200E94CF4 /* Main_iPhone.storyboard in Resources */,
 				63A887F318F627B800F8673C /* levelStar_low.png in Resources */,
 				63A8880218F627B800F8673C /* tap.caf in Resources */,
-				63A887F418F627B800F8673C /* lock.png in Resources */,
 				63A887FA18F627B800F8673C /* bg0003.png in Resources */,
 				63A887F118F627B800F8673C /* levelStar.png in Resources */,
 				63A887F918F627B800F8673C /* bg0002.png in Resources */,
+				63A8880418F6FF5100F8673C /* Worlds.plist in Resources */,
 				636FBB3318F4717200E94CF4 /* InfoPlist.strings in Resources */,
 				63A887F718F627B800F8673C /* Levels.plist in Resources */,
 				63A887F218F627B800F8673C /* levelStar@2x.png in Resources */,
 				63A887F618F627B800F8673C /* star_low@2x.png in Resources */,
 				63A887FD18F627B800F8673C /* mg0001.png in Resources */,
-				63A8880118F627B800F8673C /* mg_0003.png in Resources */,
+				63A8880118F627B800F8673C /* mg0003.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,15 +451,16 @@
 			files = (
 				63A887A618F6014B00F8673C /* LevelGrid.m in Sources */,
 				63A887B018F6241F00F8673C /* GameModel.m in Sources */,
-				63A887A718F6014B00F8673C /* LevelGridItem.m in Sources */,
 				636FBB6718F47B0F00E94CF4 /* LevelsScroller.m in Sources */,
 				636FBB7B18F4844300E94CF4 /* SKTEffects.m in Sources */,
 				636FBB4518F4717200E94CF4 /* LevelsScene.m in Sources */,
 				636FBB7818F4844300E94CF4 /* SKEmitterNode+SKTExtras.m in Sources */,
 				636FBB4218F4717200E94CF4 /* ViewController.m in Sources */,
 				636FBB7C18F4844300E94CF4 /* SKTTimingFunctions.m in Sources */,
+				63A8880718F70CAE00F8673C /* World.m in Sources */,
 				636FBB7A18F4844300E94CF4 /* SKTAudio.m in Sources */,
 				636FBB7718F4844300E94CF4 /* SKAction+SKTExtras.m in Sources */,
+				63A8880D18F710EC00F8673C /* Level.m in Sources */,
 				636FBB7918F4844300E94CF4 /* SKNode+SKTExtras.m in Sources */,
 				636FBB3918F4717200E94CF4 /* AppDelegate.m in Sources */,
 				63A887AB18F6024C00F8673C /* LevelButton.m in Sources */,

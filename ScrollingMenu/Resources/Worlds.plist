@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>WorldID</key>
+		<string>1</string>
+		<key>WorldTitle</key>
+		<string>Cityville</string>
+	</dict>
+	<dict>
+		<key>WorldID</key>
+		<string>4</string>
+		<key>WorldTitle</key>
+		<string>Deserted</string>
+	</dict>
+	<dict>
+		<key>WorldID</key>
+		<string>2</string>
+		<key>WorldTitle</key>
+		<string>Grassy Knolls</string>
+	</dict>
+	<dict>
+		<key>WorldID</key>
+		<string>5</string>
+		<key>WorldTitle</key>
+		<string>Mountain Resort</string>
+	</dict>
+	<dict>
+		<key>WorldID</key>
+		<string>3</string>
+		<key>WorldTitle</key>
+		<string>Water World</string>
+	</dict>
+</array>
+</plist>

@@ -12,5 +12,4 @@
 #define kLevelFontName          @"Marker Felt"
 #define kLevelFontSize          32.0f
 #define kLevelFontColor         [SKColor whiteColor]
-#define kLevelLockFileName      @"lock"
 #define kNumberOfStars          3

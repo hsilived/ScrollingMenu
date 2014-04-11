@@ -13,7 +13,6 @@
 
 @property (nonatomic) int pagesCount;
 @property (nonatomic, assign) int currentPage;
-@property (nonatomic) CGSize contentSize;
 @property (strong, nonatomic) NSMutableArray *content;
 @property (strong, nonatomic) NSMutableDictionary *levels;
 

@@ -12,7 +12,7 @@ static GameModel *sharedManager;
 
 @implementation GameModel
 
-@synthesize levels;
+@synthesize levels, worlds;
 
 + (GameModel *)sharedManager {
     
@@ -39,11 +39,12 @@ static GameModel *sharedManager;
 
 - (void)loadLevels {
     
-    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
+    NSString *levelsPath = [[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"];
+    levels = [NSMutableDictionary dictionaryWithContentsOfFile:levelsPath];
+
     
-    NSLog(@"!!!!! LOADING Levels !!!!! FROM - %@", bundle);
-    
-    levels = [NSMutableDictionary dictionaryWithContentsOfFile:bundle];
-    //myKeys = [levels allKeys];
+    //sort the worlds plist by worldID
+    NSSortDescriptor *sorter = [[NSSortDescriptor alloc] initWithKey:@"WorldID" ascending:YES];
+    worlds = [[NSMutableArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Worlds" ofType:@"plist"]] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sorter]];
 }
 @end

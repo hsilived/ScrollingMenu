@@ -7,13 +7,14 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "World.h"
 
 @interface LevelGrid : SKSpriteNode
 
 //@property (nonatomic, readonly) CGSize size;
 @property (nonatomic, retain) NSString *backgroundFileName;
-@property (nonatomic, retain) NSMutableDictionary *levels;
+@property (nonatomic, retain) NSArray *levels;
 
-- (LevelGrid *)initWithSize:(CGSize)aSize;
+- (instancetype)initWithWorld:(World *)world;
 
 @end

@@ -22,7 +22,9 @@
 - (void)setLevelStars:(NSInteger)life;
 
 @property (nonatomic, readonly) SEL actionTouchDown;
+@property (nonatomic, readonly) SEL actionTouchMoved;
 @property (nonatomic, readonly, weak) id targetTouchDown;
+@property (nonatomic, readonly, weak) id targetTouchMoved;
 
 - (id)initWithImageNamed:(NSString *)image;
 - (id)initWithSize:(CGSize)size;
